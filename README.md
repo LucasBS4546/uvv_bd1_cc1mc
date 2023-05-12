@@ -14,6 +14,6 @@ O PSET consiste em uma série de atividades de conhecimento teórico e prático 
 * Ao final do desenvolvimento do banco de dados, deve-se realizar também diversos scripts de consulta SQL para realizar relatórios requisitados pelo professor.
 
 ## O que está armazenado aqui:
-* O script SQL que cria o banco de dados com todos o seu conteúdo;
+* O script SQL que cria o banco de dados e sua estrutura;
 * O diagrama feito no Power Architect;
 * Os scripts SQL de relatório;
