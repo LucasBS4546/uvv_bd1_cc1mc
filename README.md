@@ -1,4 +1,5 @@
-# uvv_bd1_cc1mc
+## uvv_bd1_cc1mc
+# PSET 1 - BANCOS DE DADOS 2023/1
 
 **Aluno:** Lucas Bonato Soares.
 
@@ -7,6 +8,7 @@
 **Monitora:** Suellen Miranda Amorim.
 
 Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha. 
+
 As entregas das soluções do PSET estarão todas armazenadas dentro do diretório ``pset1``.
 
 <details>
