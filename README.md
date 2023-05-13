@@ -23,7 +23,7 @@
 > Um PSET, *Problem set*[^3], é uma prática utilizada no ensino onde o aluno deve resolver uma série de problemas com uma solução completa. Eles são amplamente utilizados nas áreas de exatas e ciências da natureza para auxiliar na fixação do conteúdo. 
 Ao invés de apenas um ou poucos problemas isolados serem apresentados para o aluno em diversas atividades de prazo curto, apresenta-se um conjunto complexo e intercalado de problemas relacionados entre si em uma atividade única que possui um prazo maior. Isso estimula o desenvolvimento de soluções mais sofisticadas e demanda que o aluno não apenas entenda o conteúdo mas consiga visualizar uma situação-problema panoramica e ir aplicando o que aprendeu para soluciona-la.
 
-<details>
+</details>
 <summary> Do que consiste o PSET que está registrado aqui?</summary>
 
 > O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados
