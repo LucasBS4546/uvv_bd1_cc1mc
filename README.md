@@ -1,10 +1,10 @@
 # uvv_bd1_cc1mc
-**Aluno:** Lucas Bonato Soares
-**Professor:** Abrantes Araújo Silva Filho
-**Monitora:** Suellen Miranda Amorim
+**Aluno:** Lucas Bonato Soares.
+**Professor:** Abrantes Araújo Silva Filho.
+**Monitora:** Suellen Miranda Amorim.
 
-> Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha. 
-> As entregas das soluções do PSET estarão todas armazenadas dentro do diretório ``pset1``.
+Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha. 
+As entregas das soluções do PSET estarão todas armazenadas dentro do diretório ``pset1``.
 
 <details>
 <summary>O que está armazenado aqui?</summary>
