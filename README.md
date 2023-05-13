@@ -24,7 +24,9 @@
 Ao invés de apenas um ou poucos problemas isolados serem apresentados para o aluno em diversas atividades de prazo curto, apresenta-se um conjunto complexo e intercalado de problemas relacionados entre si em uma atividade única que possui um prazo maior. Isso estimula o desenvolvimento de soluções mais sofisticadas e demanda que o aluno não apenas entenda o conteúdo mas consiga visualizar uma situação-problema panoramica e ir aplicando o que aprendeu para soluciona-la.
 
 </details>
-<summary> Do que consiste o PSET que está registrado aqui?</summary>
+
+<details>
+<summary> Do que consiste o PSET que está registrado aqui? </summary>
 
 > O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados
 Ele será dividido em duas partes[^4]: **Questões discursivas** e **Implementação de BD no PostgreSQL**.
