@@ -1,6 +1,9 @@
 # uvv_bd1_cc1mc
+
 **Aluno:** Lucas Bonato Soares.
+
 **Professor:** Abrantes Araújo Silva Filho.
+
 **Monitora:** Suellen Miranda Amorim.
 
 Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha. 
@@ -9,13 +12,15 @@ As entregas das soluções do PSET estarão todas armazenadas dentro do diretór
 <details>
 <summary>O que está armazenado aqui?</summary>
   
-## Dentro desse repositório estará armazenado:
+## Dentro desse repositório está armazenado:
 * Um script SQL único capaz de criar um banco de dados, gerar a sua estrutura e inserir dados;
   - _O script utiliza a linguagem administrativa do PostgreSQL_[^1]
 * Um diagrama ERD[^2] feito na aplicação Power Architect que representa o banco de dados criado pelo script SQL;
+  - _O diagrama será armazenado em formato .pdf e em formato .architect_
 * Uma série de scripts SQL de relatório (Queries!);
   - _Esses relatórios irão extrair dados do banco de dados criado_
-> Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia o tópico ``Do que consiste o PSET que está registrado aqui?``
+
+Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia o tópico "*Do que consiste o PSET?*"
 </details>
 
 
@@ -29,7 +34,7 @@ Ao invés de apenas um ou poucos problemas isolados serem apresentados para o al
 
 
 <details>
-<summary> Do que consiste o PSET que está registrado aqui? </summary>
+<summary> Do que consiste o PSET? </summary>
 
 > O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados
 Ele será dividido em duas partes: **Questões discursivas** e **Implementação de BD no PostgreSQL**.
@@ -45,7 +50,7 @@ As questões discursivas são manuscritas - apenas a segunda parte do PSET será
 </details>
 
 
-[^1]: O PostgreSQL é um sistema de gerenciamento de bancos de dados (SGBD) relacional, open-source e gratuito, considerado um dos melhores, se não o melhor, SGBD open-source no mercado. Ele pode ser acessado por uma aplicação cliente de terminal Linux chamada "psql".
+[^1]: [O PostgreSQL é um sistema de gerenciamento de bancos de dados (SGBD) relacional, open-source e gratuito, considerado um dos melhores, se não o melhor, SGBD open-source no mercado. Ele pode ser acessado por uma aplicação cliente de terminal Linux chamada "psql".](https://www.postgresql.org/)
 [^2]: Diagrama entidade-relacionamento.
 [^3]: Conjunto de problemas. 
 [^5]: [Lojas UVV](https://cdn.discordapp.com/attachments/799851247410479155/1107054756087738478/lojas-uvv.png)
