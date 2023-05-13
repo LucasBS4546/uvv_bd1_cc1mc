@@ -45,9 +45,12 @@ Ao invés de apenas um ou poucos problemas isolados serem apresentados para o al
 Do que consiste o PSET? 
 </summary>
 
-> O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados
+O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados
+  
 Ele será dividido em duas partes: **Questões discursivas** e **Implementação de BD no PostgreSQL**.
+  
 As questões discursivas são manuscritas - apenas a segunda parte do PSET será armazenada aqui
+  
 ![Imagem ilustrativa da visão geral do PSET 1](https://cdn.discordapp.com/attachments/799851247410479155/1107054462956212375/image.png)
 
 * Temos como base um diagrama ERD de um banco de dados chamado "Lojas UVV"[^5].
