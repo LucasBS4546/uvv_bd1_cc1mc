@@ -13,10 +13,10 @@ As entregas das soluções do PSET estarão todas armazenadas dentro do diretór
 
 <details>
 <summary>
-### O que está armazenado aqui?
+O que está armazenado aqui?
 </summary>
   
-Dentro desse repositório está armazenado:
+### Dentro desse repositório está armazenado:
 * Um script SQL único capaz de criar um banco de dados, gerar a sua estrutura e inserir dados;
   - _O script utiliza a linguagem administrativa do PostgreSQL_[^1]
 * Um diagrama ERD[^2] feito na aplicação Power Architect que representa o banco de dados criado pelo script SQL;
@@ -30,7 +30,7 @@ Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia 
 
 <details>
 <summary>
-  ### O que é um PSET?
+O que é um PSET?
  </summary>
 
 > Um PSET, _Problem set_[^3], é uma prática utilizada no ensino onde o aluno deve resolver uma série de problemas com uma solução completa. Eles são amplamente utilizados nas áreas de exatas e ciências da natureza para auxiliar na fixação do conteúdo. 
@@ -41,7 +41,7 @@ Ao invés de apenas um ou poucos problemas isolados serem apresentados para o al
 
 <details>
 <summary> 
- ###Do que consiste o PSET? 
+Do que consiste o PSET? 
 </summary>
 
 > O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados
