@@ -1,16 +1,18 @@
 # uvv_bd1_cc1mc
-## ALuno: Lucas Bonato Soares
+## Aluno: Lucas Bonato Soares
 ## Professor: Abrantes Araújo Silva Filho
 
 Aqui está organizado todos os **arquivos**, **modificações** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha.
 
 <details>
 <summary>O que é um PSET?</summary>
+
 Um PSET, ou *Problem set*, é uma ferramenta utilizada no ensino onde o aluno deve resolver uma série de problemas com uma solução completa.
 </details>
 
 <details>
 <summary> Do que consiste o PSET que está registrado aqui?</summary>
+  
 O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados.
 * Temos como base um diagrama ERD de um banco de dados chamado "Lojas UVV".
 * Deve-se criar um script SQL que criará o banco de dados representado pelo ERD, preservando as entidades e relacionamentos do diagrama.
@@ -22,6 +24,7 @@ O PSET consiste em uma série de atividades de conhecimento teórico e prático 
 
 <details>
 <summary>O que está armazenado aqui:</summary>
+  
 * O script SQL que cria o banco de dados e sua estrutura;
 * O diagrama feito no Power Architect;
 * Os scripts SQL de relatório;
