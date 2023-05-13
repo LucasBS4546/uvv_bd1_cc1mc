@@ -33,8 +33,9 @@ Ao invés de apenas um ou poucos problemas isolados serem apresentados para o al
 
 > O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados
 Ele será dividido em duas partes: **Questões discursivas** e **Implementação de BD no PostgreSQL**.
-  - As questões discursivas são manuscritas - apenas a segunda parte do PSET será armazenada aqui
+As questões discursivas são manuscritas - apenas a segunda parte do PSET será armazenada aqui
 ![Imagem ilustrativa da visão geral do PSET 1](https://cdn.discordapp.com/attachments/799851247410479155/1107054462956212375/image.png)
+
 * Temos como base um diagrama ERD de um banco de dados chamado "Lojas UVV"[^5].
 * Deve-se criar um script SQL que criará o banco de dados representado pelo ERD, preservando as entidades e relacionamentos do diagrama.
 * Este script deve gerar todas as tabelas, colunas, constraints, chaves e comentários do banco de dados em uma sequência lógica comentada. 
@@ -47,4 +48,4 @@ Ele será dividido em duas partes: **Questões discursivas** e **Implementação
 [^1]: O PostgreSQL é um sistema de gerenciamento de bancos de dados (SGBD) relacional, open-source e gratuito, considerado um dos melhores, se não o melhor, SGBD open-source no mercado. Ele pode ser acessado por uma aplicação cliente de terminal Linux chamada "psql".
 [^2]: Diagrama entidade-relacionamento.
 [^3]: Conjunto de problemas. 
-[^5]: ![Lojas UVV](https://cdn.discordapp.com/attachments/799851247410479155/1107054756087738478/lojas-uvv.png)
+[^5]: [Lojas UVV](https://cdn.discordapp.com/attachments/799851247410479155/1107054756087738478/lojas-uvv.png)
