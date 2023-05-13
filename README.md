@@ -18,11 +18,11 @@ O que está armazenado aqui?
   
 ### Dentro desse repositório está armazenado:
 * Um script SQL único capaz de criar um banco de dados, gerar a sua estrutura e inserir dados;
-  - _O script utiliza a linguagem administrativa do PostgreSQL_[^1]
+  - _O script utiliza a linguagem administrativa do PostgreSQL._[^1]
 * Um diagrama ERD[^2] feito na aplicação Power Architect que representa o banco de dados criado pelo script SQL;
-  - _O diagrama será armazenado em formato .pdf e em formato .architect_
+  - _O diagrama será armazenado em formato **.pdf** e em formato **.architect**._
 * Uma série de scripts SQL de relatório (Queries!);
-  - _Esses relatórios irão extrair dados do banco de dados criado_
+  - _Esses relatórios irão extrair dados do banco de dados criado._
 
 Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia o tópico "*Do que consiste o PSET?*"
 </details>
@@ -45,15 +45,15 @@ Ao invés de apenas um ou poucos problemas isolados serem apresentados para o al
 Do que consiste o PSET? 
 </summary>
 
-O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados
+O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados.
   
 Ele será dividido em duas partes: **Questões discursivas** e **Implementação de BD no PostgreSQL**.
   
-As questões discursivas são manuscritas - apenas a segunda parte do PSET será armazenada aqui
+As questões discursivas são manuscritas - apenas a segunda parte do PSET será armazenada aqui.
   
 ![Imagem ilustrativa da visão geral do PSET 1](https://cdn.discordapp.com/attachments/799851247410479155/1107054462956212375/image.png)
 
-* Temos como base um diagrama ERD de um banco de dados chamado "Lojas UVV"[^5].
+* Temos como base um diagrama ERD de um banco de dados chamado "Lojas UVV".[^5]
 * Deve-se criar um script SQL que criará o banco de dados representado pelo ERD, preservando as entidades e relacionamentos do diagrama.
 * Este script deve gerar todas as tabelas, colunas, constraints, chaves e comentários do banco de dados em uma sequência lógica comentada. 
 * O desenvolvimento desse banco de dados deve ocorrer utilizando o PostgreSQL por meio da aplicação cliente de terminal Linux "psql".
