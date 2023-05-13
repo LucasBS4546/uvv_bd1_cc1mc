@@ -1,11 +1,11 @@
 ## uvv_bd1_cc1mc
 # PSET 1 - BANCOS DE DADOS 2023/1
 
-**Aluno:** Lucas Bonato Soares.
+### **Aluno:** Lucas Bonato Soares.
 
-**Professor:** Abrantes Araújo Silva Filho.
+### **Professor:** Abrantes Araújo Silva Filho.
 
-**Monitora:** Suellen Miranda Amorim.
+### **Monitora:** Suellen Miranda Amorim.
 
 Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha. 
 
