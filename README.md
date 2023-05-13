@@ -14,7 +14,7 @@ As entregas das soluções do PSET estarão todas armazenadas dentro do diretór
 <details>
 <summary>O que está armazenado aqui?</summary>
   
-## Dentro desse repositório está armazenado:
+### Dentro desse repositório está armazenado:
 * Um script SQL único capaz de criar um banco de dados, gerar a sua estrutura e inserir dados;
   - _O script utiliza a linguagem administrativa do PostgreSQL_[^1]
 * Um diagrama ERD[^2] feito na aplicação Power Architect que representa o banco de dados criado pelo script SQL;
