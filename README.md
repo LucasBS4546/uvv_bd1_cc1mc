@@ -9,23 +9,24 @@
 
 Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha. 
 
-As entregas das soluções do PSET estarão todas armazenadas dentro do diretório ``pset1``.
 
-<details>
-<summary>
-O que está armazenado aqui?
-</summary>
   
-### Dentro desse repositório está armazenado:
-* Um script SQL único capaz de criar um banco de dados, gerar a sua estrutura e inserir dados;
+### Guia do repositório:
+
+**Diretório ``pset1``:** É onde estão armazenados todos os arquivos da entrega do PSET. Dentro deste diretório temos:
+
+* ``cc1mc_202307653_postgresql.sql``: Um script SQL capaz de criar um banco de dados, gerar a sua estrutura e inserir dados;
   - _O script utiliza a linguagem administrativa do PostgreSQL._[^1]
-* Um diagrama ERD[^2] feito na aplicação Power Architect que representa o banco de dados criado pelo script SQL;
-  - _O diagrama será armazenado em formato **.pdf** e em formato **.architect**._
-* Uma série de scripts SQL de relatório (Queries!);
-  - _Esses relatórios irão extrair dados do banco de dados criado._
+  - 
+* O subdiretório ``Diagrama Power Architect``, onde está armazenado:
+  - ``cc1mc_202307653_postgresql``: Um diagrama ERD[^2] feito na aplicação Power Architect que representa o banco de dados criado pelo script SQL;
+    - _O diagrama será armazenado em formato **.pdf** e em formato **.architect**._
+ 
+* O subdiretório ``Relatórios SQL``, onde está armazenado:
+  - Uma série de scripts SQL de relatório (Queries!);
 
 Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia o tópico "*Do que consiste o PSET?*"
-</details>
+
 
 
 <details>
