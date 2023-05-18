@@ -18,9 +18,21 @@ Com essas ações, todas as próximas etapas (criação de tabelas, constraints,
 */
 
 
--- Criação do banco de dados 'uvv'
+-- Exclusão de banco de dados e usuário existentes
 DROP DATABASE IF EXISTS uvv;
+DROP USER IF EXISTS lucasbonatosoares;
 
+
+-- Criação do usuário
+CREATE USER lucasbonatosoares
+CREATEDB
+CREATEROLE
+SUPERUSER
+LOGIN
+ENCRYPTED PASSWORD 'banana';
+
+
+-- Criação do banco de dados 'uvv'
 CREATE DATABASE uvv
     OWNER = lucasbonatosoares
     TEMPLATE = template0
@@ -34,8 +46,8 @@ CREATE DATABASE uvv
 COMMENT ON DATABASE uvv IS 'Contêm dados relacionados às lojas UVV e todos os seus serviços, processos, clientes, etc.';
 
 
--- Conexão ao banco de dados 'uvv'
-\c uvv;
+-- Conexão ao banco de dados 'uvv' usando o usuário 'lucasbonatosoares'
+\c uvv lucasbonatosoares;
 
 
 -- Criação do esquema 'lojas'
@@ -458,4 +470,3 @@ Agora todos os relacionamentos foram implementados no banco de dados.
 Com isso, a criação do banco de dados 'uvv', de seu esquema 'lojas' e de suas tabelas e colunas foi completada.
 Criou-se, ainda, chaves primárias, chaves estrangeiras, constraints de check, comentários de tabela, comentários de coluna e um comentário para o banco de dados.
 */
-
