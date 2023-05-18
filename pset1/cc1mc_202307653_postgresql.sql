@@ -29,7 +29,7 @@ CREATEDB
 CREATEROLE
 SUPERUSER
 LOGIN
-ENCRYPTED PASSWORD 'banana';
+ENCRYPTED PASSWORD 'a';
 
 
 -- Criação do banco de dados 'uvv'
@@ -47,7 +47,7 @@ COMMENT ON DATABASE uvv IS 'Contêm dados relacionados às lojas UVV e todos os 
 
 
 -- Conexão ao banco de dados 'uvv' usando o usuário 'lucasbonatosoares'
-\c uvv lucasbonatosoares;
+\c uvv lucasbonatosoares
 
 
 -- Criação do esquema 'lojas'
@@ -124,6 +124,11 @@ COMMENT ON COLUMN produtos.imagem_charset IS 'O padrão de codificação de cara
 COMMENT ON COLUMN produtos.imagem_ultima_atualizacao IS 'Registra quando ocorreu a ultima modificação no arquivo da imagem do produto.';
 
 
+-- Definição de uma constraint CHECK para a coluna 'preco_unitario' da tabela 'produtos' que impede a inserção de preço negativo
+ALTER TABLE produtos
+ADD CONSTRAINT cc_produtos_preco_unitario
+CHECK (preco_unitario >= 0);
+
 
 -- Criação da tabela 'lojas', já definindo a coluna 'loja_id' como a PK
 CREATE TABLE lojas (
@@ -190,6 +195,24 @@ COMMENT ON COLUMN lojas.logo_charset IS 'O padrão de codificação de caractere
 COMMENT ON COLUMN lojas.logo_ultima_atualizacao IS 'Registra quando ocorreu a ultima modificação no arquivo da logo da loja.';
 
 
+-- Definição de uma constraint CHECK para a coluna 'latitude' da tabela 'lojas' para evitar latitudes inexistentes
+ALTER TABLE lojas
+ADD CONSTRAINT cc_lojas_latitude
+CHECK (latitude BETWEEN -90 AND 90);
+
+
+-- Definição de uma constraint CHECK para a coluna 'longitude' da tabela 'lojas' para evitar longitudes inexistentes
+ALTER TABLE lojas
+ADD CONSTRAINT cc_lojas_longitude
+CHECK (longitude BETWEEN -180 AND 180);
+
+
+-- Definição de uma constraint CHECK para a coluna 'endereco_fisico' e a coluna 'endereco_web' da tabela 'lojas' para impedir que ambas sejam nulas simultaneamente
+ALTER TABLE lojas
+ADD CONSTRAINT cc_lojas_enderecoweb_enderecofisico
+CHECK (endereco_fisico IS NOT NULL OR endereco_web IS NOT NULL);
+
+
 
 -- Criação da tabela 'estoques', já definindo a coluna 'estoque_id' como a PK
 CREATE TABLE estoques (
@@ -219,6 +242,12 @@ COMMENT ON COLUMN estoques.produto_id IS 'FK que faz referência à tabela produ
 
 -- Definição de um comentário para a coluna 'quantidade' da tabela 'estoques'
 COMMENT ON COLUMN estoques.quantidade IS 'Quantidade em estoque do produto na loja.';
+
+
+-- Definição de uma constraint CHECK para a coluna 'quantidade' da tabela 'estoques' para evitar a inserção de quantidades negativas
+ALTER TABLE estoques
+ADD CONSTRAINT cc_estoques_quantidade
+CHECK (quantidade >= 0);
 
 
 
@@ -298,6 +327,12 @@ COMMENT ON COLUMN pedidos.status IS 'Status do pedido em relação à sua conclu
 COMMENT ON COLUMN pedidos.loja_id IS 'FK que faz referência à tabela lojas. Identifica a qual loja cada pedido se direciona.';
 
 
+-- Definição de uma constraint CHECK para a coluna 'status' da tabela 'pedidos'
+ALTER TABLE pedidos
+ADD CONSTRAINT cc_pedidos_status
+CHECK (status IN ('CANCELADO','COMPLETO','ABERTO','PAGO','REEMBOLSADO','ENVIADO'));
+
+
 
 -- Criação da tabela 'envios', já definindo a coluna 'envio_id' como a PK
 CREATE TABLE envios (
@@ -332,6 +367,13 @@ COMMENT ON COLUMN envios.endereco_entrega IS 'Endereço do local de destino do e
 
 -- Definição de um comentário para a coluna 'status' da tabela 'envios'
 COMMENT ON COLUMN envios.status IS 'Status atual do envio em relação à sua conclusão.';
+
+
+-- Definição de uma constraint CHECK para a coluna 'status' da tabela 'envios'
+ALTER TABLE envios
+ADD CONSTRAINT cc_envios_status
+CHECK (status IN ('CRIADO','ENVIADO','TRANSITO','ENTREGUE'));
+
 
 
 
@@ -373,6 +415,24 @@ COMMENT ON COLUMN pedidos_itens.quantidade IS 'Quantidade de itens pedidos.';
 
 -- Definição de um comentário para a coluna 'envio_id' da tabela 'pedidos_itens'
 COMMENT ON COLUMN pedidos_itens.envio_id IS 'FK que faz referência à tabela envios. Identifica a qual envio cada linha da tabela se refere. Esse relacionamento é opcional.';
+
+
+-- Definição de uma constraint CHECK para a coluna 'numero_da_linha' da tabela 'pedidos_itens' para evitar valores negativos
+ALTER TABLE pedidos_itens
+ADD CONSTRAINT cc_pedidositens_numerodalinha
+CHECK (numero_da_linha >= 0);
+
+
+-- Definição de uma constraint CHECK para a coluna 'quantidade' da tabela 'pedidos_itens' para evitar valores negativos
+ALTER TABLE pedidos_itens
+ADD CONSTRAINT cc_pedidositens_quantidade
+CHECK (quantidade >= 0);
+
+
+-- Definição de uma constraint CHECK para a coluna 'preco_unitario' da tabela 'pedidos_itens' para evitar valores negativos
+ALTER TABLE pedidos_itens
+ADD CONSTRAINT cc_pedidositens_precounitario
+CHECK (preco_unitario >= 0);
 
 
 
