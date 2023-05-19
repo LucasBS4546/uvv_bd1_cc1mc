@@ -13,17 +13,27 @@ Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento d
   
 ## Guia do repositório:
 
-**Diretório ``pset1``:** É onde estão armazenados todos os arquivos da entrega do PSET. Dentro deste diretório temos:
+### Diretório 'pset1':  
+É onde estão armazenados todos os arquivos da entrega do PSET. Dentro deste diretório temos:
 
-* ``cc1mc_202307653_postgresql.sql``: Um script SQL capaz de criar um banco de dados, gerar a sua estrutura e inserir dados;
-  - _O script utiliza a linguagem administrativa do PostgreSQL._[^1]
+* **'cc1mc_202307653_postgresql.sql'**: Um script SQL capaz de criar um banco de dados, gerar a sua estrutura e inserir dados utilizando a linguagem administrativa do PostgreSQL._[^1]
  
-* O subdiretório ``Diagrama Power Architect``, onde está armazenado:
-  - ``cc1mc_202307653_postgresql``: Um diagrama ERD[^2] feito na aplicação Power Architect que representa o banco de dados criado pelo script SQL;
-   - _O diagrama será armazenado em formato **.pdf** e em formato **.architect**._
+* **O subdiretório 'Diagrama Power Architect'**
  
-* O subdiretório ``Relatórios SQL``, onde está armazenado:
-  - Uma série de scripts SQL de relatório (Queries!);
+* **O subdiretório 'Relatórios SQL'**
+
+
+### Subdiretório 'Diagrama Power architect':
+É onde está armazenado o diagrama ERD[^2] feito na aplicação Power Architect. Dentro deste subdiretório temos:
+
+* **'cc1mc_202307653_postgresql.architect'**: O arquivo do diagrama em formato .architect
+
+* **'cc1mc_202307653_postgresql.architect.pdf'**: O arquivo do diagrama em formato .pdf
+
+
+### Subdiretório 'Relatórios SQL':
+É onde estão armazenados diversos scripts SQL de relatório (Queries!)
+
 
 Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia o tópico "*Do que consiste o PSET?*"
 
