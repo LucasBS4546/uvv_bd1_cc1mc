@@ -12,10 +12,7 @@
 
 Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha. 
 
-<br>
 <hr>
-<br>
-
   
 ## Guia do repositório:
 
@@ -47,11 +44,7 @@ Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento d
 
 Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia o tópico "*Do que consiste o PSET?*"
 
-<br>
-
 <hr>
-<br>
-
 
 <details>
 <summary>
@@ -63,9 +56,6 @@ Um PSET, ou _Problem set_[^3], é uma prática utilizada no ensino onde o aluno 
 Ao invés de apenas um ou poucos problemas isolados serem apresentados para o aluno em diversas atividades de prazo curto, apresenta-se um conjunto complexo e intercalado de problemas relacionados entre si em uma atividade única que possui um prazo maior. Isso estimula o desenvolvimento de soluções mais sofisticadas e demanda que o aluno não apenas entenda o conteúdo mas consiga visualizar uma situação-problema panoramica e ir aplicando o que aprendeu para soluciona-la.
 
 </details>
-
-
-<br>
 
 
 <details>
