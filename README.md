@@ -48,7 +48,7 @@ Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia 
 
 <details>
 <summary>
-<b>O que é um PSET?
+  <b>O que é um PSET?</b>
  </summary>
 
 Um PSET, ou _Problem set_[^3], é uma prática utilizada no ensino onde o aluno deve resolver uma série de problemas com uma solução completa. Eles são amplamente utilizados nas áreas de exatas e ciências da natureza para auxiliar na fixação do conteúdo. 
@@ -60,7 +60,7 @@ Ao invés de apenas um ou poucos problemas isolados serem apresentados para o al
 
 <details>
 <summary> 
-<b>Do que consiste o PSET?
+<b>Do que consiste o PSET?</b>
 </summary>
 
 O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados.
@@ -82,6 +82,6 @@ As questões discursivas são manuscritas - apenas a segunda parte do PSET será
 
 
 [^1]: [O PostgreSQL é um sistema de gerenciamento de bancos de dados (SGBD) relacional, open-source e gratuito, considerado um dos melhores, se não o melhor, SGBD open-source no mercado. Ele pode ser acessado por uma aplicação cliente de terminal Linux chamada "psql".](https://www.postgresql.org/)
-[^2]: Diagrama entidade-relacionamento.
-[^3]: Conjunto de problemas. 
+[^2]: [Diagrama entidade-relacionamento.](https://pt.wikipedia.org/wiki/Modelo_entidade_relacionamento)
+[^3]: [Conjunto de problemas.](https://en.wikipedia.org/wiki/Problem_set) 
 [^5]: [Lojas UVV](https://cdn.discordapp.com/attachments/799851247410479155/1107054756087738478/lojas-uvv.png)
