@@ -11,10 +11,10 @@ lucasbonato4546@gmail.com
 
 
 /*
-Primeiro, inicia-se o processo de criar o banco de dados 'uvv' e seu esquema 'lojas'.
-Cria-se o banco de dados e conecta-se a ele. Em seguida cria-se o esquema e muda o 'caminho de busca' do esquema público para o esquema criado. 
+Primeiro, inicia-se o processo de criar o banco de dados 'uvv', um usuário 'lucasbonatosoares' e um esquema 'lojas'.
+Cria-se o usuário, para então criar o banco de dados tendo como OWNER o usuário criado. Conecta-se ao banco de dados e muda-se o usuário para o usuário criado. Em seguida cria-se o esquema e muda o 'caminho de busca' do esquema público para o esquema criado para poder utiliza-lo na hora de criar a estrutura. 
 
-Com essas ações, todas as próximas etapas (criação de tabelas, constraints, colunas, etc) ocorrerão dentro do banco de dados e esquema criados.
+Com essas ações, todas as próximas etapas (criação de tabelas, constraints, colunas, etc) ocorrerão dentro do banco de dados e esquema criados pelo usuário 'lucasbonatosoares'.
 */
 
 
@@ -27,9 +27,8 @@ DROP USER IF EXISTS lucasbonatosoares;
 CREATE USER lucasbonatosoares
 CREATEDB
 CREATEROLE
-SUPERUSER
 LOGIN
-ENCRYPTED PASSWORD 'a';
+ENCRYPTED PASSWORD 'banana';
 
 
 -- Criação do banco de dados 'uvv'
@@ -46,13 +45,15 @@ CREATE DATABASE uvv
 COMMENT ON DATABASE uvv IS 'Contêm dados relacionados às lojas UVV e todos os seus serviços, processos, clientes, etc.';
 
 
--- Conexão ao banco de dados 'uvv' usando o usuário 'lucasbonatosoares'
-\c uvv lucasbonatosoares
+-- Conexão ao banco de dados 'uvv' (Sem gerar prompt de senha!!)
+\c -reuse-previous=on uvv
+
+
+-- Utilização do usuário 'lucasbonatosoares'
+set role to lucasbonatosoares;
 
 
 -- Criação do esquema 'lojas'
-DROP SCHEMA IF EXISTS lojas;
-
 CREATE SCHEMA lojas;
 
 
@@ -62,7 +63,7 @@ SET search_path TO lojas;
 
 
 /*
-Com o banco de dados e esquema prontos, deve-se agora aplicar as entidades e relacionamentos do modelo lógico no banco de dados.
+Com o banco de dados, usuário e esquema prontos, deve-se agora aplicar as entidades e relacionamentos do modelo lógico no banco de dados.
 
 Vou começar com as entidades, criando todas as tabelas, colunas, constraints de PK, constraints de CHECK, comentários de tabela e comentários de coluna.
 Com isso, todas as entidades do modelo lógico estarão aplicadas, para depois, então, aplicar os relacionamentos entre elas.
@@ -130,6 +131,13 @@ ADD CONSTRAINT cc_produtos_preco_unitario
 CHECK (preco_unitario >= 0);
 
 
+-- Definição de uma constraint CHECK para a coluna 'produto_id' da tabela 'produtos' que impede a inserção de valores menores ou iguais a zero
+ALTER TABLE produtos
+ADD CONSTRAINT cc_produtos_produtoid
+CHECK (produto_id > 0);
+
+
+
 -- Criação da tabela 'lojas', já definindo a coluna 'loja_id' como a PK
 CREATE TABLE lojas (
                 loja_id NUMERIC(38) NOT NULL,
@@ -195,6 +203,12 @@ COMMENT ON COLUMN lojas.logo_charset IS 'O padrão de codificação de caractere
 COMMENT ON COLUMN lojas.logo_ultima_atualizacao IS 'Registra quando ocorreu a ultima modificação no arquivo da logo da loja.';
 
 
+-- Definição de uma constraint CHECK para a coluna 'loja_id' da tabela 'lojas' que impede a inserção de valores menores ou iguais a zero
+ALTER TABLE lojas
+ADD CONSTRAINT cc_lojas_lojaid
+CHECK (loja_id > 0);
+
+
 -- Definição de uma constraint CHECK para a coluna 'latitude' da tabela 'lojas' para evitar latitudes inexistentes
 ALTER TABLE lojas
 ADD CONSTRAINT cc_lojas_latitude
@@ -244,6 +258,12 @@ COMMENT ON COLUMN estoques.produto_id IS 'FK que faz referência à tabela produ
 COMMENT ON COLUMN estoques.quantidade IS 'Quantidade em estoque do produto na loja.';
 
 
+-- Definição de uma constraint CHECK para a coluna 'estoque_id' da tabela 'estoques' que impede a inserção de valores menores ou iguais a zero
+ALTER TABLE estoques
+ADD CONSTRAINT cc_estoques_estoqueid
+CHECK (estoque_id > 0);
+
+
 -- Definição de uma constraint CHECK para a coluna 'quantidade' da tabela 'estoques' para evitar a inserção de quantidades negativas
 ALTER TABLE estoques
 ADD CONSTRAINT cc_estoques_quantidade
@@ -291,6 +311,18 @@ COMMENT ON COLUMN clientes.telefone2 IS 'Número de telefone adicional do client
 COMMENT ON COLUMN clientes.telefone3 IS 'Número de telefone adicional do cliente.';
 
 
+-- Definição de uma constraint CHECK para a coluna 'cliente_id' da tabela 'clientes' que impede a inserção de valores menores ou iguais a zero
+ALTER TABLE clientes
+ADD CONSTRAINT cc_clientes_clienteid
+CHECK (cliente_id > 0);
+
+
+--Definição de uma constraint CHECK para a coluna 'email' da tabela 'clientes' que obriga a presença de pelo menos um '@' na inserção de dados
+ALTER TABLE clientes
+ADD CONSTRAINT cc_clientes_email
+CHECK (email LIKE '%@%');
+
+
 
 -- Criação da tabela 'pedidos', já definindo a coluna 'pedido_id' como a PK
 CREATE TABLE pedidos (
@@ -325,6 +357,12 @@ COMMENT ON COLUMN pedidos.status IS 'Status do pedido em relação à sua conclu
 
 -- Definição de um comentário para a coluna 'loja_id' da tabela 'pedidos'
 COMMENT ON COLUMN pedidos.loja_id IS 'FK que faz referência à tabela lojas. Identifica a qual loja cada pedido se direciona.';
+
+
+-- Definição de uma constraint CHECK para a coluna 'pedido_id' da tabela 'pedidos' que impede a inserção de valores menores ou iguais a zero
+ALTER TABLE pedidos
+ADD CONSTRAINT cc_pedidos_pedidoid
+CHECK (pedido_id > 0);
 
 
 -- Definição de uma constraint CHECK para a coluna 'status' da tabela 'pedidos'
@@ -367,6 +405,12 @@ COMMENT ON COLUMN envios.endereco_entrega IS 'Endereço do local de destino do e
 
 -- Definição de um comentário para a coluna 'status' da tabela 'envios'
 COMMENT ON COLUMN envios.status IS 'Status atual do envio em relação à sua conclusão.';
+
+
+-- Definição de uma constraint CHECK para a coluna 'envio_id' da tabela 'envios' que impede a inserção de valores menores ou iguais a zero
+ALTER TABLE envios
+ADD CONSTRAINT cc_envios_envioid
+CHECK (envio_id > 0);
 
 
 -- Definição de uma constraint CHECK para a coluna 'status' da tabela 'envios'
@@ -444,7 +488,7 @@ Com isso, a estrutura do banco de dados estará completa.
 
 
 -- Criação da FK que relaciona a tabela 'estoques' com a tabela 'produtos' por meio da coluna 'produto_id' presente nas duas tabelas
-ALTER TABLE estoques ADD CONSTRAINT produtos_estoques_fk
+ALTER TABLE estoques ADD CONSTRAINT fk_produtos_estoques
 FOREIGN KEY (produto_id)
 REFERENCES produtos (produto_id)
 ON DELETE NO ACTION
@@ -453,7 +497,7 @@ NOT DEFERRABLE;
 
 
 -- Criação da FK que relaciona a tabela 'pedidos_itens' com a tabela 'produtos' por meio da coluna 'produto_id' presente nas duas tabelas
-ALTER TABLE pedidos_itens ADD CONSTRAINT produtos_pedidos_itens_fk
+ALTER TABLE pedidos_itens ADD CONSTRAINT fk_produtos_pedidos_itens
 FOREIGN KEY (produto_id)
 REFERENCES produtos (produto_id)
 ON DELETE NO ACTION
@@ -471,7 +515,7 @@ NOT DEFERRABLE;
 
 
 -- Criação da FK que relaciona a tabela 'pedidos' com a tabela 'lojas' por meio da coluna 'loja_id' presente nas duas tabelas
-ALTER TABLE pedidos ADD CONSTRAINT lojas_pedidos_fk
+ALTER TABLE pedidos ADD CONSTRAINT fk_lojas_pedidos
 FOREIGN KEY (loja_id)
 REFERENCES lojas (loja_id)
 ON DELETE NO ACTION
@@ -480,7 +524,7 @@ NOT DEFERRABLE;
 
 
 -- Criação da FK que relaciona a tabela 'estoques' com a tabela 'lojas' por meio da coluna 'loja_id' presente nas duas tabelas
-ALTER TABLE estoques ADD CONSTRAINT lojas_estoques_fk
+ALTER TABLE estoques ADD CONSTRAINT fk_lojas_estoques
 FOREIGN KEY (loja_id)
 REFERENCES lojas (loja_id)
 ON DELETE NO ACTION
@@ -489,7 +533,7 @@ NOT DEFERRABLE;
 
 
 -- Criação da FK que relaciona a tabela 'envios' com a tabela 'clientes' por meio da coluna 'cliente_id' presente nas duas tabelas
-ALTER TABLE envios ADD CONSTRAINT clientes_envios_fk
+ALTER TABLE envios ADD CONSTRAINT fk_clientes_envios
 FOREIGN KEY (cliente_id)
 REFERENCES clientes (cliente_id)
 ON DELETE NO ACTION
@@ -498,7 +542,7 @@ NOT DEFERRABLE;
 
 
 -- Criação da FK que relaciona a tabela 'pedidos' com a tabela 'clientes' por meio da coluna 'cliente_id' presente nas duas tabelas
-ALTER TABLE pedidos ADD CONSTRAINT clientes_pedidos_fk
+ALTER TABLE pedidos ADD CONSTRAINT fk_clientes_pedidos
 FOREIGN KEY (cliente_id)
 REFERENCES clientes (cliente_id)
 ON DELETE NO ACTION
@@ -507,7 +551,7 @@ NOT DEFERRABLE;
 
 
 -- Criação da FK que relaciona a tabela 'pedidos_itens' com a tabela 'pedidos' por meio da coluna 'pedido_id' presente nas duas tabelas
-ALTER TABLE pedidos_itens ADD CONSTRAINT pedidos_pedidos_itens_fk
+ALTER TABLE pedidos_itens ADD CONSTRAINT fk_pedidos_pedidos_itens
 FOREIGN KEY (pedido_id)
 REFERENCES pedidos (pedido_id)
 ON DELETE NO ACTION
@@ -516,7 +560,7 @@ NOT DEFERRABLE;
 
 
 -- Criação da FK que relaciona a tabela 'pedidos_itens' com a tabela 'envios' por meio da coluna 'envio_id' presente nas duas tabelas
-ALTER TABLE pedidos_itens ADD CONSTRAINT envios_pedidos_itens_fk
+ALTER TABLE pedidos_itens ADD CONSTRAINT fk_envios_pedidos_itens
 FOREIGN KEY (envio_id)
 REFERENCES envios (envio_id)
 ON DELETE NO ACTION
