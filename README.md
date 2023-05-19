@@ -1,6 +1,9 @@
 ## uvv_bd1_cc1mc
 # PSET 1 - BANCOS DE DADOS 2023/1
 
+<br>
+
+
 **Aluno:** Lucas Bonato Soares.
 
 **Professor:** Abrantes Araújo Silva Filho.
@@ -9,6 +12,9 @@
 
 Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento de meu primeiro *PSET* da disciplina "*Design e Desenvolvimento de Bancos de Dados*" realizado na Universidade Vila Velha. 
 
+<br>
+<hr>
+<br>
 
   
 ## Guia do repositório:
@@ -22,6 +28,8 @@ Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento d
  
 * **O subdiretório 'Relatórios SQL'**
 
+<br>
+
 
 ### Subdiretório 'Diagrama Power architect':
 É onde está armazenado o diagrama ERD[^2] feito na aplicação Power Architect. Dentro deste subdiretório temos:
@@ -30,6 +38,8 @@ Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento d
 
 * **'cc1mc_202307653_postgresql.architect.pdf'**: O arquivo do diagrama em formato .pdf
 
+<br>
+
 
 ### Subdiretório 'Relatórios SQL':
 É onde estão armazenados diversos scripts SQL de relatório (Queries!)
@@ -37,11 +47,15 @@ Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento d
 
 Para saber mais sobre o conteúdo que está armazenado nesse repositório, leia o tópico "*Do que consiste o PSET?*"
 
+<br>
+
+<hr>
+<br>
 
 
 <details>
 <summary>
-O que é um PSET?
+<b>O que é um PSET?
  </summary>
 
 Um PSET, ou _Problem set_[^3], é uma prática utilizada no ensino onde o aluno deve resolver uma série de problemas com uma solução completa. Eles são amplamente utilizados nas áreas de exatas e ciências da natureza para auxiliar na fixação do conteúdo. 
@@ -51,9 +65,12 @@ Ao invés de apenas um ou poucos problemas isolados serem apresentados para o al
 </details>
 
 
+<br>
+
+
 <details>
 <summary> 
-Do que consiste o PSET? 
+<b>Do que consiste o PSET?
 </summary>
 
 O PSET consiste em uma série de atividades de conhecimento teórico e prático acerca de bancos de dados.
@@ -71,6 +88,7 @@ As questões discursivas são manuscritas - apenas a segunda parte do PSET será
 * Também deve-se criar uma réplica do diagrama ERD utilizando o aplicativo de interface gráfica "Power Architect".
 * Ao final do desenvolvimento do banco de dados, deve-se realizar também diversos scripts de consulta SQL para realizar relatórios requisitados pelo professor.
 </details>
+
 
 
 [^1]: [O PostgreSQL é um sistema de gerenciamento de bancos de dados (SGBD) relacional, open-source e gratuito, considerado um dos melhores, se não o melhor, SGBD open-source no mercado. Ele pode ser acessado por uma aplicação cliente de terminal Linux chamada "psql".](https://www.postgresql.org/)
