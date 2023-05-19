@@ -19,7 +19,7 @@ Aqui está organizado todos os **arquivos** e **registros** do desenvolvimento d
 ### Diretório 'pset1':  
 É onde estão armazenados todos os arquivos da entrega do PSET. Dentro deste diretório temos:
 
-* **'cc1mc_202307653_postgresql.sql'**: Um script SQL capaz de criar um banco de dados, gerar a sua estrutura e inserir dados utilizando a linguagem administrativa do PostgreSQL._[^1]
+* **'cc1mc_202307653_postgresql.sql'**: Um script SQL capaz de criar um banco de dados, gerar a sua estrutura e inserir dados utilizando a linguagem administrativa do PostgreSQL.[^1]
  
 * **O subdiretório 'Diagrama Power Architect'**
  
