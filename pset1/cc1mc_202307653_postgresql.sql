@@ -228,12 +228,6 @@ ADD CONSTRAINT cc_lojas_enderecoweb_enderecofisico
 CHECK (endereco_fisico IS NOT NULL OR endereco_web IS NOT NULL);
 
 
--- Definição de uma constraint CHECK para a coluna 'logo_ultima_atualizacao' da tabela 'lojas' para impedir a inserção de datas no futuro
-ALTER TABLE produtos
-ADD CONSTRAINT cc_produtos_imagemultimaatualizacao
-CHECK (imagem_ultima_atualizacao <= NOW());
-
-
 
 -- Criação da tabela 'estoques', já definindo a coluna 'estoque_id' como a PK
 CREATE TABLE estoques (
