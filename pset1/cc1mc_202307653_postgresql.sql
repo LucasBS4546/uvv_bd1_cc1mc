@@ -57,7 +57,6 @@ CREATE SCHEMA lojas;
 SET search_path TO lojas;
 
 
-
 /*
 Com o banco de dados, usuário e esquema prontos, deve-se agora aplicar as entidades e relacionamentos do modelo lógico no banco de dados.
 
@@ -134,9 +133,9 @@ CHECK (produto_id > 0);
 
 
 -- Definição de uma constraint CHECK para a coluna 'imagem_ultima_atualizacao' da tabela 'produtos' para impedir a inserção de datas no futuro
-ALTER TABLE lojas
-ADD CONSTRAINT cc_lojas_logoultimaatualizacao
-CHECK (logo_ultima_atualizacao <= NOW());
+ALTER TABLE produtos
+ADD CONSTRAINT cc_produtos_imagemultimaatualizacao
+CHECK (imagem_ultima_atualizacao <= NOW());
 
 
 
