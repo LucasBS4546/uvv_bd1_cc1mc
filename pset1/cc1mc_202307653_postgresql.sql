@@ -46,11 +46,7 @@ COMMENT ON DATABASE uvv IS 'Contêm dados relacionados às lojas UVV e todos os 
 
 
 -- Conexão ao banco de dados 'uvv' (Sem gerar prompt de senha!!)
-\c -reuse-previous=on uvv
-
-
--- Utilização do usuário 'lucasbonatosoares'
-set role to lucasbonatosoares;
+\c "dbname=uvv user=lucasbonatosoares password=banana"
 
 
 -- Criação do esquema 'lojas'
@@ -135,6 +131,12 @@ CHECK (preco_unitario >= 0);
 ALTER TABLE produtos
 ADD CONSTRAINT cc_produtos_produtoid
 CHECK (produto_id > 0);
+
+
+-- Definição de uma constraint CHECK para a coluna 'imagem_ultima_atualizacao' da tabela 'produtos' para impedir a inserção de datas no futuro
+ALTER TABLE lojas
+ADD CONSTRAINT cc_lojas_logoultimaatualizacao
+CHECK (logo_ultima_atualizacao <= NOW());
 
 
 
@@ -225,6 +227,12 @@ CHECK (longitude BETWEEN -180 AND 180);
 ALTER TABLE lojas
 ADD CONSTRAINT cc_lojas_enderecoweb_enderecofisico
 CHECK (endereco_fisico IS NOT NULL OR endereco_web IS NOT NULL);
+
+
+-- Definição de uma constraint CHECK para a coluna 'logo_ultima_atualizacao' da tabela 'lojas' para impedir a inserção de datas no futuro
+ALTER TABLE produtos
+ADD CONSTRAINT cc_produtos_imagemultimaatualizacao
+CHECK (imagem_ultima_atualizacao <= NOW());
 
 
 
