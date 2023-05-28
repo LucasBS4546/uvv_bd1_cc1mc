@@ -38,7 +38,7 @@ CREATE DATABASE uvv
     ENCODING = 'UTF8'
     LC_COLLATE = 'pt_BR.UTF-8'
     LC_CTYPE = 'pt_BR.UTF-8'
-    CONNECTION LIMIT = -1;
+    allow_connections = true;
 
 
 -- Definição de um comentário para o banco de dados 'uvv'
